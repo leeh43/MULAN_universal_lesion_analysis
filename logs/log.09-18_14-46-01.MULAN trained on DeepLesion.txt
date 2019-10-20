@@ -1,0 +1,172 @@
+Loaded configuration file config.yml
+{'BEGIN_EPOCH': 8,
+ 'DATALOADER': {'DROP_LAST_BATCH': False, 'SIZE_DIVISIBILITY': 16},
+ 'DATASETS': {'TAG': {'MANUAL_ANNOT_TEST_FILE': 'hand_labeled_test_set.json',
+                      'SPLIT_FILE': 'text_mined_labels_171_and_split.json',
+                      'TAG_DICT_FILE': 'lesion_ontology_181022.xlsx',
+                      'USE_CACHE_FILE': 'tags_cache.json'},
+              'TEST': ['DeepLesion_test'],
+              'TRAIN': ['DeepLesion_train'],
+              'VAL': ['DeepLesion_val']},
+ 'EVAL_AT_BEGIN': False,
+ 'EXP_NAME': 'MULAN trained on DeepLesion',
+ 'FINETUNE_FROM': '',
+ 'GPU': '',
+ 'INPUT': {'DATA_AUG_3D': -0.5,
+           'DATA_AUG_POSITION': True,
+           'DATA_AUG_SCALE': [0.8, 1.2],
+           'IMG_DO_CLIP': True,
+           'MAX_IM_SIZE': 512,
+           'NORM_SPACING': 0.8,
+           'NUM_IMAGES_3DCE': 3,
+           'NUM_SLICES': 3,
+           'SLICE_INTV': 2},
+ 'KEEP_BEST_MODEL': True,
+ 'LOG_IN_FILE': True,
+ 'MODE': 'eval',
+ 'MODEL': {'BACKBONE': {'CONV_BODY': 'DenseTrunc-121',
+                        'FEATURE_FUSION_LEVELS': [False, False, True],
+                        'FEATURE_UPSAMPLE': True,
+                        'FEATURE_UPSAMPLE_LEVEL': 3,
+                        'OUT_CHANNELS': 512},
+           'INIT_FROM_PRETRAIN': True,
+           'MASK_ON': True,
+           'META_ARCHITECTURE': 'GeneralizedRCNN',
+           'REFINE_ON': True,
+           'ROI_BOX_HEAD': {'CLSF_LOSS_WEIGHT': 1,
+                            'DROP_OUT': False,
+                            'FEATURE_EXTRACTOR': 'MLPFeatureExtractor',
+                            'FOCAL_LOSS': False,
+                            'MLP_HEAD_DIM': 2048,
+                            'NUM_CLASSES': 2,
+                            'POOLER_RESOLUTION': 7,
+                            'POOLER_SAMPLING_RATIO': 2,
+                            'POOLER_SCALES': [0.25],
+                            'PREDICTOR': 'FPNPredictor',
+                            'REG_LOSS_WEIGHT': 10},
+           'ROI_HEADS': {'BATCH_SIZE_PER_IMAGE': 64,
+                         'BBOX_REG_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+                         'DETECTIONS_PER_IMG': 50,
+                         'NMS': 0.5,
+                         'SCORE_THRESH': 0.05,
+                         'USE_FPN': False},
+           'ROI_MASK_HEAD': {'CONV_LAYERS': [256, 256, 256, 256],
+                             'FEATURE_EXTRACTOR': 'MaskRCNNFPNFeatureExtractor',
+                             'MASK_LOSS_WEIGHT': 1,
+                             'POOLER_RESOLUTION': 14,
+                             'POOLER_SAMPLING_RATIO': 2,
+                             'POOLER_SCALES': [0.25],
+                             'PREDICTOR': 'MaskRCNNCustomPredictor',
+                             'RESOLUTION': 28,
+                             'SHARE_BOX_FEATURE_EXTRACTOR': False},
+           'ROI_REFINE_HEAD': {'BOX_FEATURE': False,
+                               'DEMOGRAPHIC_FEATURE': False,
+                               'Z_FEATURE': False},
+           'ROI_TAG_HEAD': {'CE_LOSS_POS_WT': True,
+                            'CE_POS_WT_CLAMP': 300,
+                            'FEATURE_EXTRACTOR': 'TagFeatureExtractor',
+                            'MLP_HEAD_DIM': 1024,
+                            'OHEM_LOSS_WEIGHT': 1,
+                            'OHEM_POWER': 2,
+                            'OHEM_SEL_NUM': 10000,
+                            'PREDICTOR': 'MultiLabelPredictor',
+                            'TAG_LOSS_WEIGHT': 1},
+           'RPN': {'ANCHOR_SIZES': [16, 24, 32, 48, 96],
+                   'ANCHOR_STRIDE': [4],
+                   'BATCH_SIZE_PER_IMAGE': 32,
+                   'CLSF_LOSS_WEIGHT': 1,
+                   'CONV_OUT_DIM': 512,
+                   'FOCAL_LOSS': False,
+                   'FPN_POST_NMS_TOP_N_TEST': 1000,
+                   'MIN_SIZE': 8,
+                   'POST_NMS_TOP_N_TEST': 300,
+                   'POST_NMS_TOP_N_TRAIN': 2000,
+                   'PRE_NMS_TOP_N_TEST': 6000,
+                   'PRE_NMS_TOP_N_TRAIN': 12000,
+                   'REG_LOSS_WEIGHT': 1,
+                   'USE_FPN': False},
+           'TAG_ON': True,
+           'USE_3D_FUSION': True},
+ 'SOLVER': {'BASE_LR': 0.004,
+            'CHECKPOINT_PERIOD': 1,
+            'CLIP_GRADIENT': 10.0,
+            'IMS_PER_BATCH': 8,
+            'MAX_EPOCH': 8,
+            'SHOW_LOSS_ITER': 100,
+            'STEPS': [4, 6],
+            'WARMUP_ITERS': 0,
+            'WEIGHT_DECAY': 0.0005},
+ 'TEST': {'COMPUTE_DET_ACC_PER_TAG': False,
+          'EVAL_SEG_TAG_ON_GT': True,
+          'IMS_PER_BATCH': 8,
+          'MASK': {'THRESHOLD': 0.5},
+          'MIN_LYMPH_NODE_DIAM': 5,
+          'POSTPROCESS_ON': False,
+          'SHUFFLE': True,
+          'TAG': {'CALIBRATE_TH': True, 'SELECTION_VAL': 0.9},
+          'USE_SAVED_PRED_RES': 'proc',
+          'VISUALIZE': {'DETECTIONS_PER_IMG': 5,
+                        'NMS': 0.3,
+                        'SCORE_THRESH': 0.25,
+                        'SHOW_MASK_HEATMAPS': False,
+                        'SHOW_SCALE': 2}}}
+Using 1 GPUs
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 lesions with tags, 81430 positive tags altogether
+252 parent-children relation pairs; 4451 exclusive relation pairs
+DeepLesion train num_images: 22478
+building model ...
+Loading checkpoint from checkpoints/MULAN trained on DeepLesion_epoch_08.pth
+optimizer and scheduler not loaded from checkpoint file
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 lesions with tags, 81430 positive tags altogether
+DeepLesion val num_images: 4791
+Start evaluation on DeepLesion_val dataset(4791 images).
+Total forwarding time per image: 0.0352 s
+Total inference time: 0:09:19.851726 (0.11685487920967728 s / img per device, on 1 devices)
+postprocessing: generating tag predictions, mask contours, RECIST measurements.
+
+Detection accuracy:
+Sensitivity @ [0.5, 1, 2, 4, 8, 16] average FPs per image:
+0.7180, 0.8068, 0.8633, 0.9069, 0.9321, 0.9411
+mean of [0.5, 1, 2, 4]: 0.8238
+
+Tagging accuracy:
+mined tags from reports:
+m_AUC	pc_F1	pc_Pr	pc_Re	wm_AUC	ov_F1	ov_Pr	ov_Re	
+0.9203	0.2113	0.5132	0.2479	0.9276	0.4710	0.5144	0.4344	
+
+
+Segmentation accuracy:
+avg min distance (mm) from groundtruth recist points to predicted contours in GT boxes:
+error of lesion diameter (mm) estimated from predicted contours in GT boxes:
+1.3432+-1.2552, 1.8988+-2.2801
+total test time: 583.633624
+
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 lesions with tags, 81430 positive tags altogether
+loading 500 hand-labeled test tags
+DeepLesion test num_images: 4817
+Start evaluation on DeepLesion_test dataset(4817 images).
+Total forwarding time per image: 0.0356 s
+Total inference time: 0:09:02.188317 (0.11255725914446527 s / img per device, on 1 devices)
+postprocessing: generating tag predictions, mask contours, RECIST measurements.
+
+Detection accuracy:
+Sensitivity @ [0.5, 1, 2, 4, 8, 16] average FPs per image:
+0.7351, 0.8206, 0.8742, 0.9135, 0.9414, 0.9505
+mean of [0.5, 1, 2, 4]: 0.8359
+
+Tagging accuracy:
+hand-labeled tags:
+m_AUC	pc_F1	pc_Pr	pc_Re	wm_AUC	ov_F1	ov_Pr	ov_Re	
+0.9484	0.4569	0.4961	0.6015	0.9564	0.5886	0.4841	0.7507	
+
+
+Segmentation accuracy:
+avg min distance (mm) from groundtruth recist points to predicted contours in GT boxes:
+error of lesion diameter (mm) estimated from predicted contours in GT boxes:
+1.4216+-1.3135, 1.9662+-2.1834
+total test time: 565.843562
+
+Completed at 09-18_15-05-25: MULAN trained on DeepLesion

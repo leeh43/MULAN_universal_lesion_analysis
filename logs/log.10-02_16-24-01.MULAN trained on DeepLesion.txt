@@ -1,0 +1,459 @@
+{'BBOX_NMS_OVERLAP': 0.3,
+ 'DETECTION_SCORE_THRESH': 0.5,
+ 'IMG_DO_CLIP': True,
+ 'MASK_THRESHOLD': 0.5,
+ 'MAX_DETECTIONS_PER_IMG': 15,
+ 'MIN_LYMPH_NODE_DIAM_TO_SHOW': 0,
+ 'RESULT_FIELDS': ['tag_scores', 'scores', 'contour_mm'],
+ 'TAGS_TO_KEEP': {},
+ 'TEST_SLICE_INTV_MM': 1}
+Using 1 GPUs
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 lesions with tags, 81430 positive tags altogether
+252 parent-children relation pairs; 4451 exclusive relation pairs
+DeepLesion train num_images: 22478
+building model ...
+Loading checkpoint from checkpoints/MULAN trained on DeepLesion_epoch_08.pth
+optimizer and scheduler not loaded from checkpoint file
+{'BBOX_NMS_OVERLAP': 0.3,
+ 'DETECTION_SCORE_THRESH': 0.5,
+ 'IMG_DO_CLIP': True,
+ 'MASK_THRESHOLD': 0.5,
+ 'MAX_DETECTIONS_PER_IMG': 15,
+ 'MIN_LYMPH_NODE_DIAM_TO_SHOW': 0,
+ 'RESULT_FIELDS': ['tag_scores', 'scores', 'contour_mm'],
+ 'TAGS_TO_KEEP': {},
+ 'TEST_SLICE_INTV_MM': 1}
+Using 1 GPUs
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 lesions with tags, 81430 positive tags altogether
+252 parent-children relation pairs; 4451 exclusive relation pairs
+DeepLesion train num_images: 22478
+building model ...
+Loading checkpoint from checkpoints/MULAN trained on DeepLesion_epoch_08.pth
+optimizer and scheduler not loaded from checkpoint file
+{'BBOX_NMS_OVERLAP': 0.3,
+ 'DETECTION_SCORE_THRESH': 0.5,
+ 'IMG_DO_CLIP': True,
+ 'MASK_THRESHOLD': 0.5,
+ 'MAX_DETECTIONS_PER_IMG': 15,
+ 'MIN_LYMPH_NODE_DIAM_TO_SHOW': 0,
+ 'RESULT_FIELDS': ['tag_scores', 'scores', 'contour_mm'],
+ 'TAGS_TO_KEEP': {},
+ 'TEST_SLICE_INTV_MM': 1}
+Using 1 GPUs
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 lesions with tags, 81430 positive tags altogether
+252 parent-children relation pairs; 4451 exclusive relation pairs
+DeepLesion train num_images: 22478
+building model ...
+Loading checkpoint from checkpoints/MULAN trained on DeepLesion_epoch_08.pth
+optimizer and scheduler not loaded from checkpoint file
+{'BBOX_NMS_OVERLAP': 0.3,
+ 'DETECTION_SCORE_THRESH': 0.5,
+ 'IMG_DO_CLIP': True,
+ 'MASK_THRESHOLD': 0.5,
+ 'MAX_DETECTIONS_PER_IMG': 15,
+ 'MIN_LYMPH_NODE_DIAM_TO_SHOW': 0,
+ 'RESULT_FIELDS': ['tag_scores', 'scores', 'contour_mm'],
+ 'TAGS_TO_KEEP': {},
+ 'TEST_SLICE_INTV_MM': 1}
+Using 1 GPUs
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 lesions with tags, 81430 positive tags altogether
+252 parent-children relation pairs; 4451 exclusive relation pairs
+DeepLesion train num_images: 22478
+building model ...
+Loading checkpoint from checkpoints/MULAN trained on DeepLesion_epoch_08.pth
+optimizer and scheduler not loaded from checkpoint file
+{'BBOX_NMS_OVERLAP': 0.3,
+ 'DETECTION_SCORE_THRESH': 0.5,
+ 'IMG_DO_CLIP': True,
+ 'MASK_THRESHOLD': 0.5,
+ 'MAX_DETECTIONS_PER_IMG': 15,
+ 'MIN_LYMPH_NODE_DIAM_TO_SHOW': 0,
+ 'RESULT_FIELDS': ['tag_scores', 'scores', 'contour_mm'],
+ 'TAGS_TO_KEEP': {},
+ 'TEST_SLICE_INTV_MM': 1}
+Using 1 GPUs
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 lesions with tags, 81430 positive tags altogether
+252 parent-children relation pairs; 4451 exclusive relation pairs
+DeepLesion train num_images: 22478
+building model ...
+Loading checkpoint from checkpoints/MULAN trained on DeepLesion_epoch_08.pth
+optimizer and scheduler not loaded from checkpoint file
+{'BBOX_NMS_OVERLAP': 0.3,
+ 'DETECTION_SCORE_THRESH': 0.5,
+ 'IMG_DO_CLIP': True,
+ 'MASK_THRESHOLD': 0.5,
+ 'MAX_DETECTIONS_PER_IMG': 15,
+ 'MIN_LYMPH_NODE_DIAM_TO_SHOW': 0,
+ 'RESULT_FIELDS': ['tag_scores', 'scores', 'contour_mm'],
+ 'TAGS_TO_KEEP': {},
+ 'TEST_SLICE_INTV_MM': 1}
+Using 1 GPUs
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 lesions with tags, 81430 positive tags altogether
+252 parent-children relation pairs; 4451 exclusive relation pairs
+DeepLesion train num_images: 22478
+building model ...
+Loading checkpoint from checkpoints/MULAN trained on DeepLesion_epoch_08.pth
+optimizer and scheduler not loaded from checkpoint file
+{'BBOX_NMS_OVERLAP': 0.3,
+ 'DETECTION_SCORE_THRESH': 0.5,
+ 'IMG_DO_CLIP': True,
+ 'MASK_THRESHOLD': 0.5,
+ 'MAX_DETECTIONS_PER_IMG': 15,
+ 'MIN_LYMPH_NODE_DIAM_TO_SHOW': 0,
+ 'RESULT_FIELDS': ['tag_scores', 'scores', 'contour_mm'],
+ 'TAGS_TO_KEEP': {},
+ 'TEST_SLICE_INTV_MM': 1}
+Using 1 GPUs
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 lesions with tags, 81430 positive tags altogether
+252 parent-children relation pairs; 4451 exclusive relation pairs
+DeepLesion train num_images: 22478
+building model ...
+Loading checkpoint from checkpoints/MULAN trained on DeepLesion_epoch_08.pth
+optimizer and scheduler not loaded from checkpoint file
+{'BBOX_NMS_OVERLAP': 0.3,
+ 'DETECTION_SCORE_THRESH': 0.5,
+ 'IMG_DO_CLIP': True,
+ 'MASK_THRESHOLD': 0.5,
+ 'MAX_DETECTIONS_PER_IMG': 15,
+ 'MIN_LYMPH_NODE_DIAM_TO_SHOW': 0,
+ 'RESULT_FIELDS': ['tag_scores', 'scores', 'contour_mm'],
+ 'TAGS_TO_KEEP': {},
+ 'TEST_SLICE_INTV_MM': 1}
+Using 1 GPUs
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 lesions with tags, 81430 positive tags altogether
+252 parent-children relation pairs; 4451 exclusive relation pairs
+DeepLesion train num_images: 22478
+building model ...
+Loading checkpoint from checkpoints/MULAN trained on DeepLesion_epoch_08.pth
+optimizer and scheduler not loaded from checkpoint file
+{'BBOX_NMS_OVERLAP': 0.3,
+ 'DETECTION_SCORE_THRESH': 0.5,
+ 'IMG_DO_CLIP': True,
+ 'MASK_THRESHOLD': 0.5,
+ 'MAX_DETECTIONS_PER_IMG': 15,
+ 'MIN_LYMPH_NODE_DIAM_TO_SHOW': 0,
+ 'RESULT_FIELDS': ['tag_scores', 'scores', 'contour_mm'],
+ 'TAGS_TO_KEEP': {},
+ 'TEST_SLICE_INTV_MM': 1}
+Using 1 GPUs
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 lesions with tags, 81430 positive tags altogether
+252 parent-children relation pairs; 4451 exclusive relation pairs
+DeepLesion train num_images: 22478
+building model ...
+Loading checkpoint from checkpoints/MULAN trained on DeepLesion_epoch_08.pth
+optimizer and scheduler not loaded from checkpoint file
+{'BBOX_NMS_OVERLAP': 0.3,
+ 'DETECTION_SCORE_THRESH': 0.5,
+ 'IMG_DO_CLIP': True,
+ 'MASK_THRESHOLD': 0.5,
+ 'MAX_DETECTIONS_PER_IMG': 15,
+ 'MIN_LYMPH_NODE_DIAM_TO_SHOW': 0,
+ 'RESULT_FIELDS': ['tag_scores', 'scores', 'contour_mm'],
+ 'TAGS_TO_KEEP': {},
+ 'TEST_SLICE_INTV_MM': 1}
+Using 1 GPUs
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 lesions with tags, 81430 positive tags altogether
+252 parent-children relation pairs; 4451 exclusive relation pairs
+DeepLesion train num_images: 22478
+building model ...
+Loading checkpoint from checkpoints/MULAN trained on DeepLesion_epoch_08.pth
+optimizer and scheduler not loaded from checkpoint file
+{'BBOX_NMS_OVERLAP': 0.3,
+ 'DETECTION_SCORE_THRESH': 0.5,
+ 'IMG_DO_CLIP': True,
+ 'MASK_THRESHOLD': 0.5,
+ 'MAX_DETECTIONS_PER_IMG': 15,
+ 'MIN_LYMPH_NODE_DIAM_TO_SHOW': 0,
+ 'RESULT_FIELDS': ['tag_scores', 'scores', 'contour_mm'],
+ 'TAGS_TO_KEEP': {},
+ 'TEST_SLICE_INTV_MM': 1}
+Using 1 GPUs
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 lesions with tags, 81430 positive tags altogether
+252 parent-children relation pairs; 4451 exclusive relation pairs
+DeepLesion train num_images: 22478
+building model ...
+Loading checkpoint from checkpoints/MULAN trained on DeepLesion_epoch_08.pth
+optimizer and scheduler not loaded from checkpoint file
+{'BBOX_NMS_OVERLAP': 0.3,
+ 'DETECTION_SCORE_THRESH': 0.5,
+ 'IMG_DO_CLIP': True,
+ 'MASK_THRESHOLD': 0.5,
+ 'MAX_DETECTIONS_PER_IMG': 15,
+ 'MIN_LYMPH_NODE_DIAM_TO_SHOW': 0,
+ 'RESULT_FIELDS': ['tag_scores', 'scores', 'contour_mm'],
+ 'TAGS_TO_KEEP': {},
+ 'TEST_SLICE_INTV_MM': 1}
+Using 1 GPUs
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 lesions with tags, 81430 positive tags altogether
+252 parent-children relation pairs; 4451 exclusive relation pairs
+DeepLesion train num_images: 22478
+building model ...
+Loading checkpoint from checkpoints/MULAN trained on DeepLesion_epoch_08.pth
+optimizer and scheduler not loaded from checkpoint file
+{'BBOX_NMS_OVERLAP': 0.3,
+ 'DETECTION_SCORE_THRESH': 0.5,
+ 'IMG_DO_CLIP': True,
+ 'MASK_THRESHOLD': 0.5,
+ 'MAX_DETECTIONS_PER_IMG': 15,
+ 'MIN_LYMPH_NODE_DIAM_TO_SHOW': 0,
+ 'RESULT_FIELDS': ['tag_scores', 'scores', 'contour_mm'],
+ 'TAGS_TO_KEEP': {},
+ 'TEST_SLICE_INTV_MM': 1}
+Using 1 GPUs
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 lesions with tags, 81430 positive tags altogether
+252 parent-children relation pairs; 4451 exclusive relation pairs
+DeepLesion train num_images: 22478
+building model ...
+Loading checkpoint from checkpoints/MULAN trained on DeepLesion_epoch_08.pth
+optimizer and scheduler not loaded from checkpoint file
+{'BBOX_NMS_OVERLAP': 0.3,
+ 'DETECTION_SCORE_THRESH': 0.5,
+ 'IMG_DO_CLIP': True,
+ 'MASK_THRESHOLD': 0.5,
+ 'MAX_DETECTIONS_PER_IMG': 15,
+ 'MIN_LYMPH_NODE_DIAM_TO_SHOW': 0,
+ 'RESULT_FIELDS': ['tag_scores', 'scores', 'contour_mm'],
+ 'TAGS_TO_KEEP': {},
+ 'TEST_SLICE_INTV_MM': 1}
+Using 1 GPUs
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 lesions with tags, 81430 positive tags altogether
+252 parent-children relation pairs; 4451 exclusive relation pairs
+DeepLesion train num_images: 22478
+building model ...
+Loading checkpoint from checkpoints/MULAN trained on DeepLesion_epoch_08.pth
+optimizer and scheduler not loaded from checkpoint file
+{'BBOX_NMS_OVERLAP': 0.3,
+ 'DETECTION_SCORE_THRESH': 0.5,
+ 'IMG_DO_CLIP': True,
+ 'MASK_THRESHOLD': 0.5,
+ 'MAX_DETECTIONS_PER_IMG': 15,
+ 'MIN_LYMPH_NODE_DIAM_TO_SHOW': 0,
+ 'RESULT_FIELDS': ['tag_scores', 'scores', 'contour_mm'],
+ 'TAGS_TO_KEEP': {},
+ 'TEST_SLICE_INTV_MM': 1}
+Using 1 GPUs
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 lesions with tags, 81430 positive tags altogether
+252 parent-children relation pairs; 4451 exclusive relation pairs
+DeepLesion train num_images: 22478
+building model ...
+Loading checkpoint from checkpoints/MULAN trained on DeepLesion_epoch_08.pth
+optimizer and scheduler not loaded from checkpoint file
+{'BBOX_NMS_OVERLAP': 0.3,
+ 'DETECTION_SCORE_THRESH': 0.5,
+ 'IMG_DO_CLIP': True,
+ 'MASK_THRESHOLD': 0.5,
+ 'MAX_DETECTIONS_PER_IMG': 15,
+ 'MIN_LYMPH_NODE_DIAM_TO_SHOW': 0,
+ 'RESULT_FIELDS': ['tag_scores', 'scores', 'contour_mm'],
+ 'TAGS_TO_KEEP': {},
+ 'TEST_SLICE_INTV_MM': 1}
+Using 1 GPUs
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 lesions with tags, 81430 positive tags altogether
+252 parent-children relation pairs; 4451 exclusive relation pairs
+DeepLesion train num_images: 22478
+building model ...
+Loading checkpoint from checkpoints/MULAN trained on DeepLesion_epoch_08.pth
+optimizer and scheduler not loaded from checkpoint file
+{'BBOX_NMS_OVERLAP': 0.3,
+ 'DETECTION_SCORE_THRESH': 0.5,
+ 'IMG_DO_CLIP': True,
+ 'MASK_THRESHOLD': 0.5,
+ 'MAX_DETECTIONS_PER_IMG': 15,
+ 'MIN_LYMPH_NODE_DIAM_TO_SHOW': 0,
+ 'RESULT_FIELDS': ['tag_scores', 'scores', 'contour_mm'],
+ 'TAGS_TO_KEEP': {},
+ 'TEST_SLICE_INTV_MM': 1}
+Using 1 GPUs
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 lesions with tags, 81430 positive tags altogether
+252 parent-children relation pairs; 4451 exclusive relation pairs
+DeepLesion train num_images: 22478
+building model ...
+Loading checkpoint from checkpoints/MULAN trained on DeepLesion_epoch_08.pth
+optimizer and scheduler not loaded from checkpoint file
+{'BBOX_NMS_OVERLAP': 0.3,
+ 'DETECTION_SCORE_THRESH': 0.5,
+ 'IMG_DO_CLIP': True,
+ 'MASK_THRESHOLD': 0.5,
+ 'MAX_DETECTIONS_PER_IMG': 15,
+ 'MIN_LYMPH_NODE_DIAM_TO_SHOW': 0,
+ 'RESULT_FIELDS': ['tag_scores', 'scores', 'contour_mm'],
+ 'TAGS_TO_KEEP': {},
+ 'TEST_SLICE_INTV_MM': 1}
+Using 1 GPUs
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 lesions with tags, 81430 positive tags altogether
+252 parent-children relation pairs; 4451 exclusive relation pairs
+DeepLesion train num_images: 22478
+building model ...
+Loading checkpoint from checkpoints/MULAN trained on DeepLesion_epoch_08.pth
+optimizer and scheduler not loaded from checkpoint file
+{'BBOX_NMS_OVERLAP': 0.3,
+ 'DETECTION_SCORE_THRESH': 0.5,
+ 'IMG_DO_CLIP': True,
+ 'MASK_THRESHOLD': 0.5,
+ 'MAX_DETECTIONS_PER_IMG': 15,
+ 'MIN_LYMPH_NODE_DIAM_TO_SHOW': 0,
+ 'RESULT_FIELDS': ['tag_scores', 'scores', 'contour_mm'],
+ 'TAGS_TO_KEEP': {},
+ 'TEST_SLICE_INTV_MM': 1}
+Using 1 GPUs
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 lesions with tags, 81430 positive tags altogether
+252 parent-children relation pairs; 4451 exclusive relation pairs
+DeepLesion train num_images: 22478
+building model ...
+Loading checkpoint from checkpoints/MULAN trained on DeepLesion_epoch_08.pth
+optimizer and scheduler not loaded from checkpoint file
+{'BBOX_NMS_OVERLAP': 0.3,
+ 'DETECTION_SCORE_THRESH': 0.5,
+ 'IMG_DO_CLIP': True,
+ 'MASK_THRESHOLD': 0.5,
+ 'MAX_DETECTIONS_PER_IMG': 15,
+ 'MIN_LYMPH_NODE_DIAM_TO_SHOW': 0,
+ 'RESULT_FIELDS': ['tag_scores', 'scores', 'contour_mm'],
+ 'TAGS_TO_KEEP': {},
+ 'TEST_SLICE_INTV_MM': 1}
+Using 1 GPUs
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 lesions with tags, 81430 positive tags altogether
+252 parent-children relation pairs; 4451 exclusive relation pairs
+DeepLesion train num_images: 22478
+building model ...
+Loading checkpoint from checkpoints/MULAN trained on DeepLesion_epoch_08.pth
+optimizer and scheduler not loaded from checkpoint file
+{'BBOX_NMS_OVERLAP': 0.3,
+ 'DETECTION_SCORE_THRESH': 0.5,
+ 'IMG_DO_CLIP': True,
+ 'MASK_THRESHOLD': 0.5,
+ 'MAX_DETECTIONS_PER_IMG': 15,
+ 'MIN_LYMPH_NODE_DIAM_TO_SHOW': 0,
+ 'RESULT_FIELDS': ['tag_scores', 'scores', 'contour_mm'],
+ 'TAGS_TO_KEEP': {},
+ 'TEST_SLICE_INTV_MM': 1}
+Using 1 GPUs
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 lesions with tags, 81430 positive tags altogether
+252 parent-children relation pairs; 4451 exclusive relation pairs
+DeepLesion train num_images: 22478
+building model ...
+Loading checkpoint from checkpoints/MULAN trained on DeepLesion_epoch_08.pth
+optimizer and scheduler not loaded from checkpoint file
+{'BBOX_NMS_OVERLAP': 0.3,
+ 'DETECTION_SCORE_THRESH': 0.5,
+ 'IMG_DO_CLIP': True,
+ 'MASK_THRESHOLD': 0.5,
+ 'MAX_DETECTIONS_PER_IMG': 15,
+ 'MIN_LYMPH_NODE_DIAM_TO_SHOW': 0,
+ 'RESULT_FIELDS': ['tag_scores', 'scores', 'contour_mm'],
+ 'TAGS_TO_KEEP': {},
+ 'TEST_SLICE_INTV_MM': 1}
+Using 1 GPUs
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 lesions with tags, 81430 positive tags altogether
+252 parent-children relation pairs; 4451 exclusive relation pairs
+DeepLesion train num_images: 22478
+building model ...
+Loading checkpoint from checkpoints/MULAN trained on DeepLesion_epoch_08.pth
+optimizer and scheduler not loaded from checkpoint file
+{'BBOX_NMS_OVERLAP': 0.3,
+ 'DETECTION_SCORE_THRESH': 0.5,
+ 'IMG_DO_CLIP': True,
+ 'MASK_THRESHOLD': 0.5,
+ 'MAX_DETECTIONS_PER_IMG': 15,
+ 'MIN_LYMPH_NODE_DIAM_TO_SHOW': 0,
+ 'RESULT_FIELDS': ['tag_scores', 'scores', 'contour_mm'],
+ 'TAGS_TO_KEEP': {},
+ 'TEST_SLICE_INTV_MM': 1}
+Using 1 GPUs
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 lesions with tags, 81430 positive tags altogether
+252 parent-children relation pairs; 4451 exclusive relation pairs
+DeepLesion train num_images: 22478
+building model ...
+Loading checkpoint from checkpoints/MULAN trained on DeepLesion_epoch_08.pth
+optimizer and scheduler not loaded from checkpoint file
+{'BBOX_NMS_OVERLAP': 0.3,
+ 'DETECTION_SCORE_THRESH': 0.5,
+ 'IMG_DO_CLIP': True,
+ 'MASK_THRESHOLD': 0.5,
+ 'MAX_DETECTIONS_PER_IMG': 15,
+ 'MIN_LYMPH_NODE_DIAM_TO_SHOW': 0,
+ 'RESULT_FIELDS': ['tag_scores', 'scores', 'contour_mm'],
+ 'TAGS_TO_KEEP': {},
+ 'TEST_SLICE_INTV_MM': 1}
+Using 1 GPUs
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 lesions with tags, 81430 positive tags altogether
+252 parent-children relation pairs; 4451 exclusive relation pairs
+DeepLesion train num_images: 22478
+building model ...
+Loading checkpoint from checkpoints/MULAN trained on DeepLesion_epoch_08.pth
+optimizer and scheduler not loaded from checkpoint file
+{'BBOX_NMS_OVERLAP': 0.3,
+ 'DETECTION_SCORE_THRESH': 0.5,
+ 'IMG_DO_CLIP': True,
+ 'MASK_THRESHOLD': 0.5,
+ 'MAX_DETECTIONS_PER_IMG': 15,
+ 'MIN_LYMPH_NODE_DIAM_TO_SHOW': 0,
+ 'RESULT_FIELDS': ['tag_scores', 'scores', 'contour_mm'],
+ 'TAGS_TO_KEEP': {},
+ 'TEST_SLICE_INTV_MM': 1}
+Using 1 GPUs
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 lesions with tags, 81430 positive tags altogether
+252 parent-children relation pairs; 4451 exclusive relation pairs
+DeepLesion train num_images: 22478
+building model ...
+Loading checkpoint from checkpoints/MULAN trained on DeepLesion_epoch_08.pth
+optimizer and scheduler not loaded from checkpoint file
+{'BBOX_NMS_OVERLAP': 0.3,
+ 'DETECTION_SCORE_THRESH': 0.5,
+ 'IMG_DO_CLIP': True,
+ 'MASK_THRESHOLD': 0.5,
+ 'MAX_DETECTIONS_PER_IMG': 15,
+ 'MIN_LYMPH_NODE_DIAM_TO_SHOW': 0,
+ 'RESULT_FIELDS': ['tag_scores', 'scores', 'contour_mm'],
+ 'TAGS_TO_KEEP': {},
+ 'TEST_SLICE_INTV_MM': 1}
+Using 1 GPUs
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 lesions with tags, 81430 positive tags altogether
+252 parent-children relation pairs; 4451 exclusive relation pairs
+DeepLesion train num_images: 22478
+building model ...
+Loading checkpoint from checkpoints/MULAN trained on DeepLesion_epoch_08.pth
+optimizer and scheduler not loaded from checkpoint file
+{'BBOX_NMS_OVERLAP': 0.3,
+ 'DETECTION_SCORE_THRESH': 0.5,
+ 'IMG_DO_CLIP': True,
+ 'MASK_THRESHOLD': 0.5,
+ 'MAX_DETECTIONS_PER_IMG': 15,
+ 'MIN_LYMPH_NODE_DIAM_TO_SHOW': 0,
+ 'RESULT_FIELDS': ['tag_scores', 'scores', 'contour_mm'],
+ 'TAGS_TO_KEEP': {},
+ 'TEST_SLICE_INTV_MM': 1}
+Using 1 GPUs
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 lesions with tags, 81430 positive tags altogether
+252 parent-children relation pairs; 4451 exclusive relation pairs
+DeepLesion train num_images: 22478
+building model ...
+Loading checkpoint from checkpoints/MULAN trained on DeepLesion_epoch_08.pth
+optimizer and scheduler not loaded from checkpoint file

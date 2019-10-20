@@ -1,0 +1,10 @@
+{'BBOX_NMS_OVERLAP': 0.3,
+ 'DETECTION_SCORE_THRESH': 0.5,
+ 'IMG_DO_CLIP': True,
+ 'MASK_THRESHOLD': 0.5,
+ 'MAX_DETECTIONS_PER_IMG': 15,
+ 'MIN_LYMPH_NODE_DIAM_TO_SHOW': 0,
+ 'RESULT_FIELDS': ['tag_scores', 'scores', 'contour_mm'],
+ 'TAGS_TO_KEEP': {},
+ 'TEST_SLICE_INTV_MM': 1}
+Using 1 GPUs

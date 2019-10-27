@@ -61,128 +61,148 @@ def windowing_rev(im, win):
     im1 += win[0]
     return im1
 
-img_num = 'img0003'
-input_win = [-1024, 3071]
-win_show = [-175, 275]
-nifti_zb = os.path.join('/nfs/masi/leeh43/zhoubing100/img/'
-                     + img_num + '.nii.gz')
-n = nib.load(nifti_zb)
-data_ori = n.get_data()
-data = n.get_data()
-#new_img = np.zeros((1000, 1000, data.shape[2]))
-final_mask = np.zeros((512, 512, data.shape[2]))
-for i in range(data.shape[2]):
-    slice_num = i
-    print('Slice Number = %d' % slice_num)
-    c = os.path.join('/nfs/masi/leeh43/MULAN_universal_lesion_analysis/results/_nfs_masi_leeh43_zhoubing100_img_'+ str(img_num) + '.nii.gz/'
-                     + 'slice_' + str(slice_num) + '_mask_c.csv')
-    c = pd.read_csv(c)
-    c = c['c'].tolist()
-    im_scale = c[4] 
-    #n = nib.load(nifti_zb)
-    #data = n.get_data()
-    ############# Ad-hoc change orientation #################
-    vol = (n.get_data().astype('int32') + 32768).astype('uint16')  # to be consistent with png files
-    # spacing = -data.get_affine()[0,1]
-    # slice_intv = -data.get_affine()[2,2]
-    aff = n.get_affine()[:3, :3]
-    spacing = np.abs(aff[:2, :2]).max()
-    slice_intv = np.abs(aff[2, 2])
-    aff_1 = aff
-    # TODO: Ad-hoc code for normalizing the orientation of the volume.
-    # The aim is to make vol[:,:,i] an supine right-left slice
-    # It works for the authors' data, but maybe not suitable for some kinds of nifti files
-    if np.abs(aff[0, 0]) > np.abs(aff[0, 1]):
-        vol = np.transpose(vol, (1, 0, 2))
-        aff = aff[[1, 0, 2], :]
-    if np.max(aff[0, :2]) > 0:
-        vol = vol[::-1, :, :]
-    if np.max(aff[1, :2]) > 0:
-        vol = vol[:, ::-1, :]
-    
-    vol = vol.astype(np.float32,copy=False) - 32768
-    data = vol[int(c[0]):int(c[1]) + 1, int(c[2]):int(c[3]) + 1, :]
-    data_1 = data
-    data = cv2.resize(data, None, None, fx=im_scale, fy=im_scale, interpolation=cv2.INTER_LINEAR)
-    #data = cv2.flip(data, 1 )
-    img = np.transpose(data, (2,0,1))
-    scale = 2
-    #img = (img - img.min())/(img.max()-img.min())
-    #img = img*255.0
-    #img = np.transpose(data,(2,0,1))
-    img = img[slice_num,:,:]
-    img = windowing(img, win_show).astype('uint8')
-    img = cv2.resize(img, None, None, fx=scale, fy=scale, interpolation=cv2.INTER_LINEAR)
-    img = cv2.cvtColor(img, cv2.COLOR_GRAY2RGB)
-    
-    #h, w = img.shape[0], img.shape[1]
-    # calculate the center of the image
-    #center = (w / 2, h / 2)
-    #scale = 1.0 
-    #angle90 = 90
-    #M = cv2.getRotationMatrix2D(center, angle90, scale)
-    #img = cv2.warpAffine(img, M, (h, w)) 
-    
-    mask = np.zeros_like(img)
-    data_dir = os.path.join('/nfs/masi/leeh43/MULAN_universal_lesion_analysis/results/')
-    file_dir = '_nfs_masi_leeh43_zhoubing100_img_'+ str(img_num) + '.nii.gz'
-    c_l = pd.read_csv(os.path.join(data_dir, file_dir, 'slice_' + str(slice_num) + '_contour_location.csv' ), na_values=' ')
-    #c_l.dropna()
-    #print(c_l.iloc[57,:])
-    #c_l['list1'].fillna(str(0), inplace=True)
-    #c_l['list2'].fillna(str(0), inplace=True)
-    
-    count = 0
-    # = np.zeros((len(c_l), 1, c_l.shape[1]))
-    contour_list = []
-    a = []
-    for num in range(c_l.shape[0]):
-        if (np.isnan(c_l['list1'][num])):
-            contour_list.append(a)
-            a = []
-        if (not np.isnan(c_l['list1'][num])):
-            x = c_l['list1'][num]
-            y = c_l['list2'][num]
-            #a[count, 0, 0] = float(x)
-            #a[count, 0, 1] = float(y)
-            tmp = np.array([x.round().astype(int),y.round().astype(int)])
-            tmp = np.reshape(tmp, (1,2))
-            
-            a.append(tmp)     
-            #count = count + 1
-    if a != []:
-        a = np.array(a)
-        cv2.drawContours(mask, [a], -1, (0,255,0), thickness = -1)        
-    else:
-        for item in contour_list:
-            item = np.array(item)
-            cv2.drawContours(mask, [item], -1, (0,255,0), thickness = -1)
+for num in range(100):
+    if num + 1  < 10:       
+        img_num = 'img000' + str(num + 1)
+        #data_dir = '/nfs/masi/leeh43/MULAN_universal_lesion_analysis/results'
+        #img_dir = '_nfs_masi_leeh43_zhoubing100_img_' + img_num + '.nii.gz/'
+        #result = os.path.join(data_dir, img_dir + 'results.txt' )
+        main_dir = '/nfs/masi/leeh43/zhoubing100/img/'
+        nifti_zb = os.path.join(main_dir, img_num + '.nii.gz')
         
-    #fig.savefig('/nfs/masi/leeh43/test.png')
-    #cv2.fillPoly(mask, contours, 255)
-    save_dir = os.path.join('/nfs/masi/leeh43/zhoubing100/img/' + img_num +'/')
-    if os.path.isdir(save_dir) == False:
-        os.mkdir(save_dir)
+    if num + 1 >= 10 and num + 1 < 100:       
+        img_num = 'img00' + str(num + 1)
+        main_dir = '/nfs/masi/leeh43/zhoubing100/img/'
+        nifti_zb = os.path.join(main_dir, img_num + '.nii.gz')
         
-    mask = cv2.cvtColor(mask, cv2.COLOR_BGR2GRAY)
-    mask = cv2.resize(mask, None, None, fx=(1/scale), fy=(1/scale), interpolation=cv2.INTER_LINEAR)
-    mask = cv2.resize(mask, (data_1.shape[1],data_1.shape[0]), fx=(1/im_scale), fy=(1/im_scale), interpolation=cv2.INTER_LINEAR)
-    new_mask = np.zeros((512,512))
-    new_mask[int(c[0]):int(c[1]) + 1, int(c[2]):int(c[3]) + 1] = mask
-    aff_2 = aff_1[[1, 0, 2], :]
-    if np.max(aff_2[1, :2]) > 0:
-        new_mask[:, ::-1] = new_mask
-    if np.max(aff_2[0, :2]) > 0:
-        new_mask[::-1, :] = new_mask
-    if np.abs(aff_1[0, 0]) > np.abs(aff_1[0, 1]):
-        new_mask = np.transpose(new_mask)
-    
-    final_mask[:,:,i] = new_mask
+    if num + 1 == 100:       
+        img_num = 'img0' + str(num + 1)
+        main_dir = '/nfs/masi/leeh43/zhoubing100/img/'
+        nifti_zb = os.path.join(main_dir, img_num + '.nii.gz')
 
+    input_win = [-1024, 3071]
+    win_show = [-175, 275]
     
-output_fn_mask = os.path.join(save_dir + 'contour_mask.nii.gz')
-#output_fn_img = os.path.join(save_dir + '100_slice_img.nii.gz')
-mask_nifti = nib.Nifti1Image(final_mask, n.affine, n.header)
-#img_nifti = nib.Nifti1Image(data_ori_100, n.affine, n.header)
-nib.save(mask_nifti, output_fn_mask)
-#nib.save(img_nifti, output_fn_img)
+    print(nifti_zb)
+    n = nib.load(nifti_zb)
+    data_ori = n.get_data()
+    data = n.get_data()
+    #new_img = np.zeros((1000, 1000, data.shape[2]))
+    final_mask = np.zeros((512, 512, data.shape[2]))
+    for i in range(data.shape[2]):
+        slice_num = i
+        print('Slice Number = %d' % slice_num)
+        c = os.path.join('/nfs/masi/leeh43/MULAN_universal_lesion_analysis/results/_nfs_masi_leeh43_zhoubing100_img_'+ str(img_num) + '.nii.gz/'
+                         + 'slice_' + str(slice_num) + '_mask_c.csv')
+        c = pd.read_csv(c)
+        c = c['c'].tolist()
+        im_scale = c[4] 
+        #n = nib.load(nifti_zb)
+        #data = n.get_data()
+        ############# Ad-hoc change orientation #################
+        vol = (n.get_data().astype('int32') + 32768).astype('uint16')  # to be consistent with png files
+        # spacing = -data.get_affine()[0,1]
+        # slice_intv = -data.get_affine()[2,2]
+        aff = n.get_affine()[:3, :3]
+        spacing = np.abs(aff[:2, :2]).max()
+        slice_intv = np.abs(aff[2, 2])
+        aff_1 = aff
+        # TODO: Ad-hoc code for normalizing the orientation of the volume.
+        # The aim is to make vol[:,:,i] an supine right-left slice
+        # It works for the authors' data, but maybe not suitable for some kinds of nifti files
+        if np.abs(aff[0, 0]) > np.abs(aff[0, 1]):
+            vol = np.transpose(vol, (1, 0, 2))
+            aff = aff[[1, 0, 2], :]
+        if np.max(aff[0, :2]) > 0:
+            vol = vol[::-1, :, :]
+        if np.max(aff[1, :2]) > 0:
+            vol = vol[:, ::-1, :]
+        
+        vol = vol.astype(np.float32,copy=False) - 32768
+        data = vol[int(c[0]):int(c[1]) + 1, int(c[2]):int(c[3]) + 1, :]
+        data_1 = data
+        data = cv2.resize(data, None, None, fx=im_scale, fy=im_scale, interpolation=cv2.INTER_LINEAR)
+        #data = cv2.flip(data, 1 )
+        img = np.transpose(data, (2,0,1))
+        scale = 2
+        #img = (img - img.min())/(img.max()-img.min())
+        #img = img*255.0
+        #img = np.transpose(data,(2,0,1))
+        img = img[slice_num,:,:]
+        img = windowing(img, win_show).astype('uint8')
+        img = cv2.resize(img, None, None, fx=scale, fy=scale, interpolation=cv2.INTER_LINEAR)
+        img = cv2.cvtColor(img, cv2.COLOR_GRAY2RGB)
+        
+        #h, w = img.shape[0], img.shape[1]
+        # calculate the center of the image
+        #center = (w / 2, h / 2)
+        #scale = 1.0 
+        #angle90 = 90
+        #M = cv2.getRotationMatrix2D(center, angle90, scale)
+        #img = cv2.warpAffine(img, M, (h, w)) 
+        
+        mask = np.zeros_like(img)
+        data_dir = os.path.join('/nfs/masi/leeh43/MULAN_universal_lesion_analysis/results/')
+        file_dir = '_nfs_masi_leeh43_zhoubing100_img_'+ str(img_num) + '.nii.gz'
+        c_l = pd.read_csv(os.path.join(data_dir, file_dir, 'slice_' + str(slice_num) + '_contour_location.csv' ), na_values=' ')
+        #c_l.dropna()
+        #print(c_l.iloc[57,:])
+        #c_l['list1'].fillna(str(0), inplace=True)
+        #c_l['list2'].fillna(str(0), inplace=True)
+        
+        count = 0
+        # = np.zeros((len(c_l), 1, c_l.shape[1]))
+        contour_list = []
+        a = []
+        for num in range(c_l.shape[0]):
+            if (np.isnan(c_l['list1'][num])):
+                contour_list.append(a)
+                a = []
+            if (not np.isnan(c_l['list1'][num])):
+                x = c_l['list1'][num]
+                y = c_l['list2'][num]
+                #a[count, 0, 0] = float(x)
+                #a[count, 0, 1] = float(y)
+                tmp = np.array([x.round().astype(int),y.round().astype(int)])
+                tmp = np.reshape(tmp, (1,2))
+                
+                a.append(tmp)     
+                #count = count + 1
+        if a != []:
+            a = np.array(a)
+            cv2.drawContours(mask, [a], -1, (0,255,0), thickness = -1)        
+        else:
+            for item in contour_list:
+                item = np.array(item)
+                cv2.drawContours(mask, [item], -1, (0,255,0), thickness = -1)
+            
+        #fig.savefig('/nfs/masi/leeh43/test.png')
+        #cv2.fillPoly(mask, contours, 255)
+        save_dir = os.path.join('/nfs/masi/leeh43/zhoubing100/img/' + img_num +'/')
+        if os.path.isdir(save_dir) == False:
+            os.mkdir(save_dir)
+            
+        mask = cv2.cvtColor(mask, cv2.COLOR_BGR2GRAY)
+        mask = cv2.resize(mask, None, None, fx=(1/scale), fy=(1/scale), interpolation=cv2.INTER_LINEAR)
+        mask = cv2.resize(mask, (data_1.shape[1],data_1.shape[0]), fx=(1/im_scale), fy=(1/im_scale), interpolation=cv2.INTER_LINEAR)
+        new_mask = np.zeros((512,512))
+        new_mask[int(c[0]):int(c[1]) + 1, int(c[2]):int(c[3]) + 1] = mask
+        aff_2 = aff_1[[1, 0, 2], :]
+        if np.max(aff_2[1, :2]) > 0:
+            new_mask[:, ::-1] = new_mask
+        if np.max(aff_2[0, :2]) > 0:
+            new_mask[::-1, :] = new_mask
+        if np.abs(aff_1[0, 0]) > np.abs(aff_1[0, 1]):
+            new_mask = np.transpose(new_mask)
+        
+        final_mask[:,:,i] = new_mask
+    
+        
+    output_fn_mask = os.path.join(save_dir + 'contour_mask.nii.gz')
+    #output_fn_img = os.path.join(save_dir + '100_slice_img.nii.gz')
+    mask_nifti = nib.Nifti1Image(final_mask, n.affine, n.header)
+    #img_nifti = nib.Nifti1Image(data_ori_100, n.affine, n.header)
+    nib.save(mask_nifti, output_fn_mask)
+    #nib.save(img_nifti, output_fn_img)
+    
+    print('-------------Finished-------------')

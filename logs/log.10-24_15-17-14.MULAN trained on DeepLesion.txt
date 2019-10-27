@@ -47,5 +47,3 @@ lesion tags loaded from program_data/tags_cache.json
 252 parent-children relation pairs; 4451 exclusive relation pairs
 DeepLesion train num_images: 22478
 building model ...
-Loading checkpoint from checkpoints/MULAN trained on DeepLesion_epoch_08.pth
-optimizer and scheduler not loaded from checkpoint file

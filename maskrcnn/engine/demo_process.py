@@ -26,23 +26,51 @@ def exec_model(model):
     model.eval()
     device = torch.device(cfg.MODEL.DEVICE)
 
-    while True:
-        info = "Please input the path of a nifti CT volume >> "
-        while True:
-            path = input(info)
-            if not os.path.exists(path):
-                print('file does not exist!')
-                continue
-            try:
-                print('reading image ...')
-                nifti_data = nib.load(path)
+    #while True:
+        #info = "Please input the path of a nifti CT volume >> "
+        #while True:
+            #path = input(info)
+# ------- Zhoubing 100 datasets -------
+#    for num in range(12):
+#        if num + 1  < 10:       
+#            img_num = 'img000' + str(num + 1)
+#            #data_dir = '/nfs/masi/leeh43/MULAN_universal_lesion_analysis/results'
+#            #img_dir = '_nfs_masi_leeh43_zhoubing100_img_' + img_num + '.nii.gz/'
+#            #result = os.path.join(data_dir, img_dir + 'results.txt' )
+#            main_dir = '/nfs/masi/leeh43/zhoubing100/img/'
+#            img_dir = os.path.join(main_dir, img_num + '.nii.gz')
+#            
+#        if num + 1 >= 10 and num + 1 < 100:       
+#            img_num = 'img00' + str(num + 1)
+#            main_dir = '/nfs/masi/leeh43/zhoubing100/img/'
+#            img_dir = os.path.join(main_dir, img_num + '.nii.gz')
+#            
+#        if num + 1 == 100:       
+#            img_num = 'img0' + str(num + 1)
+#            main_dir = '/nfs/masi/leeh43/zhoubing100/img/'
+#            img_dir = os.path.join(main_dir, img_num + '.nii.gz')
+#            if not os.path.exists(img_dir):
+#                print('file does not exist!')
+#                continue
+#        #try:
+            
+# ------- ImageVU B Datasets -------
+    data_dir = os.path.join('/nfs/masi/tangy5/ImageVU_B_bpr_pipeline/INPUTS/cropped/images')
+    count = 0
+    for item in os.listdir(data_dir):
+        img_dir = os.path.join(data_dir, item)
+        
+        print('reading image ...')
+        nifti_data = nib.load(img_dir)
+        count = count + 1
+        print('Number of Datasets: %d' % count)
+        print('Load Image: %s' % img_dir)
+            #break
+        #except:
+            #print('load nifti file error!')
 
-                break
-            except:
-                print('load nifti file error!')
-
         while True:
-            win_sel = input('Window to show, 1:soft tissue, 2:lung, 3: bone >> ')
+            win_sel = '1' #input('Window to show, 1:soft tissue, 2:lung, 3: bone >> ')
             if win_sel not in ['1', '2', '3']:
                 continue
             win_show = [[-175, 275], [-1500, 500], [-500, 1300]]
@@ -55,7 +83,8 @@ def exec_model(model):
         num_total_slice = vol.shape[2]
 
         total_time = 0
-        output_dir = os.path.join(cfg.RESULTS_DIR,path.replace(os.sep, '_'))
+        imageVU_dir = 'ImageVU_B_result'
+        output_dir = os.path.join(cfg.RESULTS_DIR,imageVU_dir,img_dir.replace(os.sep, '_'))
         if not os.path.exists(output_dir):
             os.mkdir(output_dir)
         
